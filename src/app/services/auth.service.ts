@@ -83,6 +83,7 @@ export class AuthService {
       .then(() => {
         // Sign-out successful.
         console.log('User Signed Out');
+        this.routes.navigate(['']);
       })
       .catch((error) => {
         // An error happened.
