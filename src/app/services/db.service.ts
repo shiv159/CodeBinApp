@@ -1,5 +1,12 @@
 import { Injectable } from '@angular/core';
-import { getFirestore, collection, addDoc, getDocs,query,where } from 'firebase/firestore';
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  getDocs,
+  query,
+  where,
+} from 'firebase/firestore';
 import { Snippet } from '../model/Snippet';
 import { AuthService } from './auth.service';
 
@@ -15,7 +22,8 @@ export class DbService {
   async addCodeSnippet(snippets: Snippet) {
     try {
       const docRef = await addDoc(collection(this.db, 'snippets'), {
-        ...snippets,by : this.authService.getUid()
+        ...snippets,
+        by: this.authService.getUid(),
       });
       console.log('Document written with ID: ', docRef.id);
     } catch (e) {
@@ -33,7 +41,7 @@ export class DbService {
     return snippets;
   }
 
-  async getCodeSnippetById(id: string) {
+  async getCodeSnippetById() {
     const snippets: Snippet[] = [];
 
     const q = query(

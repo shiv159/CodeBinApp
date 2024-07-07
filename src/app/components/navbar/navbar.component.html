@@ -6,6 +6,7 @@
 
         @if(isLoggedIn()){
           <button routerLink="/create" routerLinkActive="active" class="login-button">Create Bin</button> 
+          <button routerLink="/snippets" routerLinkActive="active" class="login-button">My Snippets</button>
           <button (click)="logout()" class="signup-button">Log Out</button>
         }
         @else{
