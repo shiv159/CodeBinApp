@@ -1,0 +1,22 @@
+<div class="login-container">
+    <h2>Login</h2>
+    <form [formGroup]="loginForm">
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" [formControl]="email">
+
+            <p class="red-text" [hidden]="email.valid || email.untouched">Enter valid email</p>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" [formControl]="password">
+            <p class="red-text" [hidden]="password.valid || password.untouched">Enter valid password</p>
+        </div>
+        <div class="form-group">
+            <button type="login" (click)="login()" value="Login">Login</button>
+        </div>
+        <div class="form-group">
+            <button type="login" (click)="reset()" value="Login">Reset</button>
+        </div>
+    </form>
+</div>
