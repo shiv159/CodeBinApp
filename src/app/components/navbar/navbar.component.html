@@ -2,8 +2,18 @@
     <div class="navbar">
       <span class="app-name" routerLink="">My App</span>
       <div class="buttons">
-        <button routerLink="/login" routerLinkActive="active" class="login-button" >Login</button>
-        <button routerLink="/signup" routerLinkActive="active" class="signup-button">Sign Up</button>
+        
+
+        @if(isLoggedIn()){
+          <button routerLink="/create" routerLinkActive="active" class="login-button">Create Bin</button> 
+          <button (click)="logout()" class="signup-button">Log Out</button>
+        }
+        @else{
+          <button routerLink="/login" routerLinkActive="active" class="login-button">Login</button>
+          <button routerLink="/signup" routerLinkActive="active" class="signup-button">Sign Up</button>
+        }
+
+        
       </div>
     </div>
   </nav>
